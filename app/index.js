@@ -34,9 +34,9 @@ var SusyFlaskGenerator = yeoman.generators.Base.extend({
 
   writing: {
     packages: function () {
-      this.src.copy('_package.json', 'package.json');
-      this.src.copy('bowerrc', '.bowerrc');
-      this.src.copy('_bower.json', 'bower.json');
+      this.src.copy('_package.json', this.appName + '/package.json');
+      this.src.copy('bowerrc', this.appName + '/.bowerrc');
+      this.src.copy('_bower.json', this.appName + '/bower.json');
     },
 
     flask: function () {
@@ -58,6 +58,9 @@ var SusyFlaskGenerator = yeoman.generators.Base.extend({
   },
 
   end: function () {
+    var projectdir = process.cwd() + '/' + this.appName;
+    process.chdir(projectdir);
+
     this.installDependencies();
   }
 });
