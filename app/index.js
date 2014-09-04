@@ -44,6 +44,8 @@ var SusyFlaskGenerator = yeoman.generators.Base.extend({
       this.template('pip-requires.txt', this.appName + '/pip-requires.txt')
       this.template('run.py', 'run.py')
       this.template('views.py', this.appName + '/views.py')
+      this.template('default_settings.py', this.appName + '/default_settings.py')
+      this.template('config/dev.cfg', this.appName + '/config/dev.cfg')
     },
 
     templates: function () {
