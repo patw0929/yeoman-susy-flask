@@ -33,11 +33,9 @@ var SusyFlaskGenerator = yeoman.generators.Base.extend({
   },
 
   writing: {
-    app: function () {
-      this.dest.mkdir('app');
-      this.dest.mkdir('app/templates');
-
+    packages: function () {
       this.src.copy('_package.json', 'package.json');
+      this.src.copy('bowerrc', '.bowerrc');
       this.src.copy('_bower.json', 'bower.json');
     },
 
@@ -53,6 +51,7 @@ var SusyFlaskGenerator = yeoman.generators.Base.extend({
     },
 
     projectfiles: function () {
+      this.src.copy('gitignore', '.gitignore');
       this.src.copy('editorconfig', '.editorconfig');
       this.src.copy('jshintrc', '.jshintrc');
     }
