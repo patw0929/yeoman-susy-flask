@@ -17,15 +17,16 @@ var SusyFlaskGenerator = yeoman.generators.Base.extend({
       'Welcome to the awe-inspiring SusyFlask generator!'
     ));
 
-    var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
-    }];
+    var prompts = [
+      {
+        name: 'appName',
+        message: 'Name of this flask app',
+        default: path.basename(process.cwd())
+      }
+    ];
 
     this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
+      this.appName = props.appName;
 
       done();
     }.bind(this));
@@ -38,6 +39,17 @@ var SusyFlaskGenerator = yeoman.generators.Base.extend({
 
       this.src.copy('_package.json', 'package.json');
       this.src.copy('_bower.json', 'bower.json');
+    },
+
+    flask: function () {
+      this.template('__init__.py', this.appName + '/__init__.py')
+      this.template('pip-requires.txt', this.appName + '/pip-requires.txt')
+      this.template('run.py', 'run.py')
+      this.template('views.py', this.appName + '/views.py')
+    },
+
+    templates: function () {
+      this.copy('templates/index.html', this.appName + '/templates/index.html')
     },
 
     projectfiles: function () {
