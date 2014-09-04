@@ -52,6 +52,14 @@ var SusyFlaskGenerator = yeoman.generators.Base.extend({
       this.directory('templates', this.appName + '/templates')
     },
 
+    assets: function () {
+      this.directory('assets', this.appName + '/assets')
+    },
+
+    gulp: function () {
+      this.src.copy('gulpfile.js', this.appName + '/gulpfile.js');
+    },
+
     projectfiles: function () {
       this.src.copy('gitignore', '.gitignore');
       this.src.copy('editorconfig', '.editorconfig');
