@@ -4,3 +4,6 @@
 
 DEBUG = False
 TESTING = False
+
+# Flask Mobility Settings
+MOBILE_USER_AGENTS = 'iphone|ipod|android|iemobile|opera (?:mini|mobi)'
