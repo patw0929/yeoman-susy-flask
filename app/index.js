@@ -47,7 +47,7 @@ var SusyFlaskGenerator = yeoman.generators.Base.extend({
     },
 
     templates: function () {
-      this.copy('templates/index.html', this.appName + '/templates/index.html')
+      this.directory('templates', this.appName + '/templates')
     },
 
     projectfiles: function () {
