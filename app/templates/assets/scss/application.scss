@@ -1,0 +1,13 @@
+@import "base/screen";
+
+body {
+  color: red;
+
+  @include susy-breakpoint($tablet...) {
+    color: green;
+  }
+
+  @include susy-breakpoint($desktop...) {
+    color: blue;
+  }
+}

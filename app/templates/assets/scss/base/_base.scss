@@ -1,0 +1,42 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "breakpoint";
+@import "susy";
+
+// ---------------------------------------------------------------------------
+// Basic Grid
+
+// Default mobile-first grid setup
+$total-columns : 4;
+$column-width : 3.75em;
+
+$tablet-columns : 10;
+$tablet-width : 768px;
+
+$desktop-columns: 12;
+$desktop-width  : 960px;
+
+$container-width: 100%;       // makes container fill the screen by default (we override this on $desktop)
+
+$container-style: fluid;
+$from-direction: left;
+$omega-float: left;
+
+$breakpoint-no-query-fallbacks: true;
+
+$susy: (
+  // the basics
+  columns: $total-columns,
+  column-width: $column-width,
+  container: $container-width,
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+);
+
+$tablet: 768px, 10 $tablet-width, '.lt-ie9';
+$desktop: 960px, 12 $container-width, '.lt-ie9';
