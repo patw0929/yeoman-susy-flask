@@ -1,7 +1,9 @@
 from <%= appName %> import app
 
 from flask import Flask, request, redirect, render_template, url_for
+from flask.ext.mobility.decorators import mobile_template
 
 @app.route('/')
-def index():
-    return render_template('index.html')
+@mobile_template('index{.mobile}.html')
+def index(template):
+    return render_template(template)
