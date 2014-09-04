@@ -24,8 +24,12 @@
       </div>
     <![endif]-->
 
+    {% include 'layouts/_header.html' %}
+
     {% block content %}
     {% endblock %}
+
+    {% include 'layouts/_footer.html' %}
 
     {% block specific_page_javascript %}
     {% endblock %}
