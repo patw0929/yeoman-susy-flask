@@ -1,42 +1,50 @@
 // ---------------------------------------------------------------------------
 // Imports
 
-@import "breakpoint";
-@import "susy";
+@import 'susy/sass/susy';
+@import 'mixins/replace-text';
 
 // ---------------------------------------------------------------------------
 // Basic Grid
 
 // Default mobile-first grid setup
-$total-columns : 4;
-$column-width : 3.75em;
+$total-columns  : 4;
+$column-width   : 60px;
 
-$tablet-columns : 10;
-$tablet-width : 768px;
+// tablet
+$tablet-columns : 9;
+$tablet-width   : 720px;
 
-$desktop-columns: 12;
-$desktop-width  : 960px;
+// laptop
+$laptop-columns : 12;
+$laptop-width   : 960px;
+
+// desktop
+$desktop-columns: 15;
+$desktop-width  : 1200px;
 
 $container-width: 100%;       // makes container fill the screen by default (we override this on $desktop)
 
 $container-style: fluid;
-$from-direction: left;
-$omega-float: left;
 
 $breakpoint-no-query-fallbacks: true;
+$fallback-legacy-browser-class: '.lt-ie9';
 
 $susy: (
   // the basics
   columns: $total-columns,
   column-width: $column-width,
   container: $container-width,
+  math: $container-style,
+  global-box-sizing: border-box,
   debug: (
-    image: hide,
+    image: hide, // show, hide, show-columns, show-baseline
     color: rgba(#66f, .25),
     output: background,
     toggle: top right,
-  ),
+  )
 );
 
-$tablet: 768px, 10 $tablet-width, '.lt-ie9';
-$desktop: 960px, 12 $container-width, '.lt-ie9';
+$tablet: layout($tablet-width $tablet-columns .25 after);
+$laptop: layout($laptop-width $laptop-columns .25 after);
+$desktop: layout($container-width $desktop-columns .25 after);

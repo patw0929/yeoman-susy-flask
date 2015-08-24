@@ -1,17 +1,11 @@
-# generator-susy-flask [![Build Status](https://secure.travis-ci.org/patw0929/generator-susy-flask.png?branch=master)](https://travis-ci.org/patw0929/generator-susy-flask)
+# generator-susy-flask
 
-> [Yeoman](http://yeoman.io) generator
+> [Yeoman](http://yeoman.io) generator for [Flask](http://flask.pocoo.org/) & [Susy](http://susy.oddbird.net/) project
 
 
 ## Getting Started
 
 ### What is Yeoman?
-
-Trick question. It's not a thing. It's this guy:
-
-![](http://i.imgur.com/JHaAlBJ.png)
-
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
 
 Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
 
@@ -29,18 +23,49 @@ To install generator-susy-flask from npm, run:
 npm install -g generator-susy-flask
 ```
 
-Finally, initiate the generator:
+Now that the generator is installed, create a directory for your new project
+
+```bash
+mkdir my-yo-project
+$ cd my-yo-project
+```
+
+and then run:
 
 ```bash
 yo susy-flask
 ```
 
-### Getting To Know Yeoman
+### Run your project
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
+After the project initialized, we need:
 
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+Run gulp tasks:
 
+```bash
+$ cd {your-app-name}
+$ gulp
+```
+
+And remember to install python packages (install in virtualenv):
+
+```bash
+$ cd my-yo-project
+$ virtualenv env
+$ . env/bin/activate
+$ pip install -r {your-app-name}/pip-requires.txt
+$ python run.py
+```
+
+Finally your website will run at [http://localhost:8888/](http://localhost:8888/).
+
+## Packages Used
+
+* [Flask](http://flask.pocoo.org/)
+* [Susy 2](http://susy.oddbird.net/)
+* [Gulp.js](http://gulpjs.com/)
+* [webpack](http://webpack.github.io/)
+* [node-sass](https://github.com/sass/node-sass)
 
 ## License
 

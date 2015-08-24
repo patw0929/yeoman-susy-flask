@@ -1,0 +1,28 @@
+// scss-lint:disable DuplicateProperty
+@mixin replace-text($filename) {
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: left;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url('/static/images/' + $filename);
+}
+
+@mixin replace-text-with-dimensions($filename, $width, $height) {
+  @include replace-text($filename);
+  width: $width;
+  height: $height;
+}
+
+@mixin replace-text-with-svg($svg-name, $png-name: $svg-name) {
+  text-indent: 110%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: left;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url('/static/images/' + $png-name + '.png');
+  background-image: none, url('/static/images/' + $svg-name + '.svg');
+}
+// scss-lint:enable DuplicateProperty
