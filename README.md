@@ -1,4 +1,4 @@
-# generator-susy-flask [![Build Status](https://secure.travis-ci.org/patw0929/generator-susy-flask.png?branch=master)](https://travis-ci.org/patw0929/generator-susy-flask)
+# generator-susy-flask
 
 > [Yeoman](http://yeoman.io) generator
 
