@@ -1,18 +1,19 @@
+@import 'normalize-scss/normalize';
 @import 'base/variable';
 @import 'base/screen';
 
-body {
-  content: 'Mobile View';
+h1:after {
+  content: ' Mobile View';
 
   @include susy-breakpoint($tablet-width, $tablet) {
-    content: 'Tablet View';
+    content: ' Tablet View';
   }
 
   @include susy-breakpoint($laptop-width, $laptop) {
-    content: 'Laptop View';
+    content: ' Laptop View';
   }
 
   @include susy-breakpoint($desktop-width, $desktop) {
-    content: 'Desktop View';
+    content: ' Desktop View';
   }
 }
