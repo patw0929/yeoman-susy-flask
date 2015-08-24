@@ -1,13 +1,13 @@
 {
   "name": "generator-susy-flask",
   "version": "1.0.0",
-  "description": "Yeoman generator",
+  "description": "Yeoman generator for Flask + Susy project",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "patw0929/generator-susy-flask",
   "author": {
     "name": "Patrick Wang",
-    "email": "",
+    "email": "patw.hi@gmail.com",
     "url": "https://github.com/patw0929"
   },
   "engines": {
@@ -20,6 +20,15 @@
     "app"
   ],
   "keywords": [
+    "flask",
+    "python",
+    "susy",
+    "rwd",
+    "responsive web design",
+    "grid system",
+    "gulp",
+    "webpack",
+    "sass",
     "yeoman-generator"
   ],
   "dependencies": {
