@@ -1,0 +1,7 @@
+scss_files: 'assets/scss/**/*.scss'
+
+linters:
+  PropertySortOrder:
+    order: smacss
+  SelectorFormat:
+    convention: hyphenated_BEM

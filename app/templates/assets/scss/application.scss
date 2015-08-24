@@ -1,13 +1,18 @@
-@import "base/screen";
+@import 'base/variable';
+@import 'base/screen';
 
 body {
-  color: red;
+  content: 'Mobile View';
 
-  @include susy-breakpoint($tablet...) {
-    color: green;
+  @include susy-breakpoint($tablet-width, $tablet) {
+    content: 'Tablet View';
   }
 
-  @include susy-breakpoint($desktop...) {
-    color: blue;
+  @include susy-breakpoint($laptop-width, $laptop) {
+    content: 'Laptop View';
+  }
+
+  @include susy-breakpoint($desktop-width, $desktop) {
+    content: 'Desktop View';
   }
 }

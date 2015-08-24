@@ -40,20 +40,20 @@ var SusyFlaskGenerator = yeoman.generators.Base.extend({
     },
 
     flask: function () {
-      this.template('__init__.py', this.appName + '/__init__.py')
-      this.template('pip-requires.txt', this.appName + '/pip-requires.txt')
-      this.template('run.py', 'run.py')
-      this.template('views.py', this.appName + '/views.py')
-      this.template('default_settings.py', this.appName + '/default_settings.py')
-      this.template('config/dev.cfg', this.appName + '/config/dev.cfg')
+      this.template('__init__.py', this.appName + '/__init__.py');
+      this.template('pip-requires.txt', this.appName + '/pip-requires.txt');
+      this.template('run.py', 'run.py');
+      this.template('views.py', this.appName + '/views.py');
+      this.template('default_settings.py', this.appName + '/default_settings.py');
+      this.template('config/dev.cfg', this.appName + '/config/dev.cfg');
     },
 
     templates: function () {
-      this.directory('templates', this.appName + '/templates')
+      this.directory('templates', this.appName + '/templates');
     },
 
     assets: function () {
-      this.directory('assets', this.appName + '/assets')
+      this.directory('assets', this.appName + '/assets');
     },
 
     gulp: function () {
@@ -64,6 +64,7 @@ var SusyFlaskGenerator = yeoman.generators.Base.extend({
       this.src.copy('gitignore', '.gitignore');
       this.src.copy('editorconfig', '.editorconfig');
       this.src.copy('jshintrc', '.jshintrc');
+      this.src.copy('scss-lint.yml', '.scss-lint.yml');
     }
   },
 
